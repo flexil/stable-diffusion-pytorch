@@ -1,0 +1,9 @@
+torch
+pytorch-fid
+diffusers
+clip
+transformers
+accelerate
+matplotlib
+numpy
+scipy
