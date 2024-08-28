@@ -1,13 +1,16 @@
 # Stable Diffusion Image Generation Repository
 =====================================================
 
-This repository contains a Python script for generating images using the Stable Diffusion model. It leverages the diffusers library to interact with the Stable Diffusion pipeline and create images based on textual prompts.
+This repository contains a Python script for generating images using the Stable Diffusion model.
+
+It leverages the diffusers library to interact with the Stable Diffusion pipeline and create images based on textual prompts.
 
 ## Prerequisites
 
 Before running the script, make sure you have the necessary Python packages installed. You can install them using the following command:
 
 ```bash
+
 pip install pytorch-fid torch diffusers clip transformers accelerate matplotlib
 
 ```
@@ -58,9 +61,13 @@ python3  stable_diff.py
 
 ## Configuration
 
-Model ID: Default is "CompVis/stable-diffusion-v1-4". You can change this to use a different model version.
+Model ID: Default is "CompVis/stable-diffusion-v1-4". 
+
+You can change this to use a different model version.
 
 Device: Set the device variable to "cuda" for NVIDIA GPUs, "cpu" for CPU, or "mps" for Apple Silicon Macs.
 
+
 Output
+
 The generated images are saved in the `./img
