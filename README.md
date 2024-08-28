@@ -1,91 +1,53 @@
-# stable-diffusion-pytorch
-A Python implementation of the Stable Diffusion model for generating images using PyTorch.
-This repository contains a Python script that utilizes the Stable Diffusion model to generate images based on provided prompts.
+This repository contains a Python script for generating images using the Stable Diffusion model. It leverages the diffusers library to interact with the Stable Diffusion pipeline and create images based on textual prompts.
 
 Prerequisites
+Before running the script, make sure you have the necessary Python packages installed. You can install them using the following command:
 
-Python 3.x
-PyTorch
-Transformers
-Diffusers
-Clip
-Accelerate
-Matplotlib
-Installation
-
-To install the required libraries, run the following command:
-
+bash
+Copy code
 pip install pytorch-fid torch diffusers clip transformers accelerate matplotlib
-Usage
+Code Overview
+Dependencies
+torch: PyTorch framework.
+diffusers: Library for using diffusion models.
+clip: Contrastive Language-Image Pretraining.
+transformers: Hugging Face transformers library.
+accelerate: Library for managing distributed computing.
+matplotlib: Plotting library for visualizations.
+Functions
+load_model(model_id: str, device="cpu") -> StableDiffusionPipeline
+Loads the Stable Diffusion model pipeline from the specified model_id and places it on the specified device (CPU, CUDA, or MPS).
 
-Replace the model_id variable in the script with your desired model ID.
-Add your desired prompts to the prompts list.
-Run the script using the command: python stable_diff.py
-Example
+generate_images(pipe: StableDiffusionPipeline, prompts: List[str], device="cuda") -> List[PIL.Image.Image]
+Generates images from a list of prompts using the provided Stable Diffusion pipeline. Supports automatic casting for performance optimization.
 
-Model ID: CompVis/stable-diffusion-v1-4
-Prompts: ["A photo of a cat", "A painting of a sunset"]
-Script Overview
+Main Script Execution
+In the main script execution:
 
-The script consists of two main functions:
+Model Initialization: The script initializes the Stable Diffusion model using the specified model ID.
+Prompt Definition: Prompts for image generation are defined.
+Device Selection: The device is selected (e.g., "cpu", "cuda", "mps" for M1 Macs).
+Image Generation: The script generates images from the prompts.
+Saving and Rendering: Generated images are saved to a specified directory and rendered.
+Running the Script
+To run the script, execute the following command in your terminal:
 
-load_model: Loads the Stable Diffusion model with the provided model ID and device.
-generate_images: Generates images based on the provided prompts using the loaded model.
-The script also includes a main section that demonstrates how to use these functions to generate images.
+bash
+Copy code
+python script_name.py
+Replace script_name.py with the name of your script file.
 
-
-Device Support
-
-The script supports the following devices:
-
-CPU
-CUDA (GPU)
-MPS (M1 Macs)
-Note that the autocast feature is not supported on MPS devices.
-
+Configuration
+Model ID: Default is "CompVis/stable-diffusion-v1-4". You can change this to use a different model version.
+Device: Set the device variable to "cuda" for NVIDIA GPUs, "cpu" for CPU, or "mps" for Apple Silicon Macs.
 Output
+The generated images are saved in the ./img directory with a prefix pil_image. The images are also rendered for visualization.
 
-The generated images will be saved in the ./img directory with the prefix pil_image. The images will also be rendered using the render_images function.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-Utilities
+Contributing
+Feel free to open issues or submit pull requests if you have suggestions or improvements.
 
-The script uses the following utility functions:
-
-render_images: Renders the generated images.
-save_pil_images: Saves the generated images as PIL images.
-
-Here are the steps to run the code:
-
-Prerequisites
-
-Make sure you have Python 3.x installed on your system.
-Install the required libraries by running the following command in your terminal:
-pip install pytorch-fid torch diffusers clip transformers accelerate matplotlib
-Step 1: Clone the repository (if you haven't already)
-
-If you haven't already, clone the repository to your local machine using the following command:
-
-git clone https://github.com/your-username/your-repo-name.git
-Step 2: Navigate to the repository directory
-
-Navigate to the directory where the repository is cloned:
-
-cd your-repo-name
-Step 3: Edit the script (optional)
-
-If you want to change the model ID or prompts, open the stable_diff.py file in a text editor and modify the model_id and prompts variables as needed.
-
-Step 4: Run the script
-
-Run the script using the following command:
-
-python stable_diff.py
-Step 5: Wait for the images to be generated
-
-The script will take some time to generate the images. You can monitor the progress by looking at the output in the terminal.
-
-Step 6: View the generated images
-
-Once the script has finished running, you can view the generated images in the ./img directory. The images will be saved with the prefix pil_image.
-
-That's it! If you encounter any issues or errors, feel free to ask.
+Contact
+For any questions or issues, please reach out to Your Name.
