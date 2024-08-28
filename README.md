@@ -1,10 +1,13 @@
+# Stable Diffusion Image Generation Repository
+=====================================================
+
 This repository contains a Python script for generating images using the Stable Diffusion model. It leverages the diffusers library to interact with the Stable Diffusion pipeline and create images based on textual prompts.
 
-Prerequisites
+## Prerequisites
+
 Before running the script, make sure you have the necessary Python packages installed. You can install them using the following command:
 
-bash
-Copy code
+```bash
 pip install pytorch-fid torch diffusers clip transformers accelerate matplotlib
 Code Overview
 Dependencies
@@ -22,9 +25,7 @@ generate_images(pipe: StableDiffusionPipeline, prompts: List[str], device="cuda"
 Generates images from a list of prompts using the provided Stable Diffusion pipeline. Supports automatic casting for performance optimization.
 
 Main Script Execution
-In the main script execution:
-
-Model Initialization: The script initializes the Stable Diffusion model using the specified model ID.
+Model Initialization: The script initializes the Stable Diffusion model using the specified model_id.
 Prompt Definition: Prompts for image generation are defined.
 Device Selection: The device is selected (e.g., "cpu", "cuda", "mps" for M1 Macs).
 Image Generation: The script generates images from the prompts.
@@ -32,8 +33,6 @@ Saving and Rendering: Generated images are saved to a specified directory and re
 Running the Script
 To run the script, execute the following command in your terminal:
 
-bash
-Copy code
 python script_name.py
 Replace script_name.py with the name of your script file.
 
@@ -41,13 +40,4 @@ Configuration
 Model ID: Default is "CompVis/stable-diffusion-v1-4". You can change this to use a different model version.
 Device: Set the device variable to "cuda" for NVIDIA GPUs, "cpu" for CPU, or "mps" for Apple Silicon Macs.
 Output
-The generated images are saved in the ./img directory with a prefix pil_image. The images are also rendered for visualization.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Contributing
-Feel free to open issues or submit pull requests if you have suggestions or improvements.
-
-Contact
-For any questions or issues, please reach out to Your Name.
+The generated images are saved in the `./img
