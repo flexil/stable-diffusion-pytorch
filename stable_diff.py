@@ -1,4 +1,4 @@
-# !pip install pytorch-fid torch diffusers clip transformers accelerate matplotlib
+
 
 from typing import List
 import torch
