@@ -16,10 +16,15 @@ pip install pytorch-fid torch diffusers clip transformers accelerate matplotlib
 * Dependencies
 
 torch: PyTorch framework.
+
 diffusers: Library for using diffusion models.
+
 clip: Contrastive Language-Image Pretraining.
+
 transformers: Hugging Face transformers library.
+
 accelerate: Library for managing distributed computing.
+
 matplotlib: Plotting library for visualizations.
 
 ## Functions
